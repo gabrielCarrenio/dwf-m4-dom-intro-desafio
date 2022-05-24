@@ -25,6 +25,18 @@ const cosasQueAprendimos = [
   },
 ];
 
-function main() {}
+function main() {
+  const lista = document.querySelector(".lista");
+  lista.innerHTML = "";
+
+  cosasQueAprendimos.forEach((element) => {
+    let li = document.createElement("li");
+    li.innerHTML = element.tema;
+    if (!element.class.length == 0) {
+      li.classList.add(element.class);
+    }
+    lista.appendChild(li);
+  });
+}
 
 main();
